@@ -1,0 +1,2952 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>EXLINE</title>
+
+    <!-- css:plugins module -->
+    <link rel="stylesheet" type="text/css" href="css/plugins/framework7/framework7.ios.min.css">
+    <link rel="stylesheet" type="text/css" href="css/plugins/framework7/framework7.ios.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7-icons.css">
+
+    <!-- css:main module -->
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        /* stepper control */
+        .stepper-control {
+            width: 80px;
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+
+        .input-stepper label {
+            position: absolute;
+            top: 8px;
+            right: 100px;
+            font-weight: 600;
+            color: #007aff;
+        }
+
+        .input-stepper input {
+            font-weight: 600;
+        }
+
+        .item-title {
+            padding-top: 10px !important;
+        }
+
+        .item-after {
+            height: 43px;
+            width: 100%;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 8px 0;
+            margin-left: 0 !important;
+        }
+
+        /* 
+		Generic Styling, for Desktops/Laptops 
+		*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #ddd;
+            font-weight: bold;
+        }
+
+        td,
+        th {
+            padding: 6px;
+            text-align: left;
+        }
+
+        tr {
+            background: #fff;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        tr:last-child {
+            border-bottom: 0;
+        }
+
+        /* custom table */
+        table.rounded {
+            border: none;
+        }
+
+        table.rounded td {
+            border: none;
+        }
+
+        table.rounded th:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        table.rounded th:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        table.rounded tr:first-child td:first-child {
+            /*border-radius: 5px 0 0 0;*/
+            border-top-left-radius: 5px;
+        }
+
+        table.rounded tr:first-child td:last-child {
+            /*border-radius: 0 5px 0 0;*/
+            border-top-right-radius: 5px;
+        }
+
+        table.rounded tr:last-child td:first-child {
+            /*border-radius: 0 0 0 5px;*/
+            border-bottom-left-radius: 5px;
+        }
+
+        table.rounded tr:last-child td:last-child {
+            /*border-radius: 0 0 5px 0;*/
+            border-bottom-right-radius: 5px;
+        }
+
+
+        textarea {
+            -webkit-box-sizing: border-box;
+            /* Safari/Chrome, other WebKit */
+            -moz-box-sizing: border-box;
+            /* Firefox, other Gecko */
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+        }
+
+        hr {
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #log-details table {
+            border: none !important;
+        }
+
+        /* 3.0.33 */
+        .focus-text {
+            color: #007aff !important;
+            font-weight: bold;
+        }
+
+
+
+        .fab-label {
+            padding: 2px 5px;
+            align-self: center;
+            user-select: none;
+            white-space: nowrap;
+            border-radius: 3px;
+            font-size: 12px;
+            background: #6666;
+            color: #fff;
+            box-shadow: 0 6px 20px rgb(0, 0, 0, 0.2);
+            margin-right: 10px;
+        }
+
+        .speed-dial-buttons .f7-icons {
+            font-size: 22px;
+        }
+
+        .autocomplete-page .list-block {
+            margin: 0px !important;
+        }
+    </style>
+
+    <!-- js:plugins module -->
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.input-stepper.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.uuid.js"></script>
+    <script type="text/javascript" src="js/plugins/qrcode.min.js"></script>
+    <!--
+    <script type="text/javascript" src="js/plugins/html2canvas.min.js"></script>
+    <script type="text/javascript" src="js/plugins/FileSaver.js"></script>
+    -->
+    <script type="text/javascript" src="js/plugins/framework7/framework7.min.js"></script>
+    <!-- js:test mode -->
+    <script type="text/javascript" src="native.js"></script>
+    <script type="text/javascript" src="default.js"></script>
+
+    <!-- new method-->
+    <script type="text/javascript" src="js/app_core.js"></script>
+    <script type="text/javascript" src="js/mod_page_setup.js"></script>
+    <script type="text/javascript" src="js/mod_page_paygate_list.js"></script>
+    <script type="text/javascript" src="js/mod_page_product.js"></script>
+
+    <script type="text/javascript" src="js/app_page_initialize.js"></script>
+
+
+
+
+    <!-- js:main module -->
+    <script type="text/javascript" src="js/string.js"></script>
+    <script type="text/javascript" src="js/ssql.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/print_android.js"></script>
+    <script type="text/javascript" src="js/print_iOS.js"></script>
+
+    <script type="text/javascript" src="js/sync_transact.js"></script>
+    <!--<script type="text/javascript" src="js/sync_daily.js"></script>-->
+    <script type="text/javascript" src="js/sync_master.js"></script>
+    <script type="text/javascript" src="js/sync.js"></script>
+    <script type="text/javascript" src="js/manage_booking.js"></script>
+    <script type="text/javascript" src="js/find_booking.js"></script>
+    <!--<script type="text/javascript" src="js/product.js"></script>-->
+    <script type="text/javascript" src="js/manual_voucher.js"></script>
+
+    <script type="text/javascript" src="js/loroparque_str.js"></script>
+    <script type="text/javascript" src="js/loroparque.js"></script>
+
+    <script type="text/javascript" src="js/buffer.js"></script>
+    <script type="text/javascript" src="js/price_info_online.js"></script>
+    <script type="text/javascript" src="js/price_info.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
+    <script type="text/javascript" src="js/currency_calc.js"></script>
+    <script type="text/javascript" src="js/checkout_sav.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/initializer.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- Print TVP -->
+    <script type="text/javascript" src="js/itos_print.js"></script>
+    <script type="text/javascript" src="js/itos_device.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="loading-animation loading">Loading&#8230;</div>
+    <div class="loading-animation loader loading-text">
+        <span id="loading-text">PLEASE WAIT</span>
+    </div>
+
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block" style="margin:0;">
+            <h3>MENU</h3>
+            <p id="menu-findbookings">
+                <a href="#">FIND BOOKING</a>
+                <br><span style="font-size:12px;">View and find your transaction, make sure the data is correct.</span>
+            </p>
+            <p id="menu-bookings">
+                <a href="#">MANAGE BOOKING</a>
+                <br><span style="font-size:12px;">View and manage your transaction, make sure the data is
+                    correct.</span>
+            </p>
+            <p id="menu-synchronize">
+                <a href="#">SYNCHRONIZE</a>
+                <br><span style="font-size:12px;">Send offline transaction, update product, price, exchange rates and
+                    etc.</span>
+            </p>
+            <p id="menu-price-list">
+                <a href="#">PRODUCT &amp; PRICE</a>
+                <br><span style="font-size:12px;">Find available product comparison between offline and online
+                    data.</span>
+            </p>
+            <p id="menu-exchangerates">
+                <a href="#">EXCHANGE RATES</a>
+                <br><span style="font-size:12px;">Find out exchange rates comparison between offline and online
+                    data.</span>
+            </p>
+            <!--
+        <p id="menu-update-program">
+            <a href="#">UPDATE PROGRAM</a>
+            <br><span style="font-size:12px;">Download the latest version of EXLINE from server.</span>
+        </p>-->
+
+            <p id="menu-manualvoucher">
+                <a href="#">MANUAL VOUCHER</a>
+                <br><span style="font-size:12px;">Create a voucher manually for emergency condition.</span>
+            </p>
+
+            <p id="menu-itosdevice">
+                <a href="#">ITOS Device</a>
+                <br><span style="font-size:12px;">Module Test Device ITOS.</span>
+            </p>
+
+            <!--
+        <p id="menu-mflisting">
+            <a href="#">MF LISTING</a>
+            <br><span style="font-size:12px;">Master File Listing</span>
+        </p>
+        -->
+            <p id="menu-settings">
+                <a href="#">SETTINGS</a>
+                <br><span style="font-size:12px;">Configure account, interfaces, transaction policies and review company
+                    information.</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Views-->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class-->
+        <div class="view view-main">
+
+            <!-- Top Navbar-->
+            <div class="navbar">
+
+                <div data-page="index" class="navbar-inner">
+
+                    <div class="left">
+                        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i>
+                        </a>
+                    </div>
+                    <div class="center" style="font-weight:600;" id="app-title">EXLINE</div>
+                    <div class="right"></div>
+
+                    <div class="subnavbar" style="height:70px;">
+                        <ul class="vizard-tab25">
+                            <li>
+                                <span>USER</span>
+                                <span id="lbl-nav-info-user" class="sp_custom_header">-</span>
+                                <span>NAME</span>
+                            </li>
+                            <li>
+                                <span>SESSION</span>
+                                <span id="lbl-nav-info-code" class="sp_custom_header">-</span>
+                                <span>NUMBER</span>
+                            </li>
+                            <li id="cart-nav">
+                                <span>CART ITEMS</span>
+                                <span id="lbl-nav-info-cart" class="sp_custom_header">0</span>
+                                <span style="text-decoration:underline; color:blue;"><a href="#">TAP TO VIEW</a></span>
+                            </li>
+                            <li id="app-mode">
+                                <span>MODE</span>
+                                <span style="top:-7px;">
+                                    <div class="switch">
+                                        <input type="checkbox" id="switch-mode">
+                                        <label for="switch-mode"></label>
+                                    </div>
+                                </span>
+                                <span id="lbl-nav-info-mode" style="top:0;">ONLINE</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div data-page="price-detail" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Price Detail</div>
+                </div>
+
+                <div data-page="cart" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                    </div>
+                    <div class="center sliding">Cart</div>
+                    <div class="right sliding">
+                        <a href="#" class="checkout-nav">
+                            <i class="icon icon-checkbox"></i><span>Chackout</span>
+                        </a>
+                        <!--<p>Totals</p>-->
+                    </div>
+
+                    <div class="subnavbar" style="height:25px;">
+                        <div class="left sliding">
+                            <p>Totals</p>
+                        </div>
+                        <div class="right sliding color-red">
+                            <p><b class="cart-total-payment">0</b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="exchangerates" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Exchange Rates</div>
+                </div>
+
+                <div data-page="payment" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Payment</div>
+                    <div class="right sliding">
+                        <p>Totals</p>
+                    </div>
+
+                    <div class="subnavbar" style="height:25px;">
+                        <div class="right sliding">
+                            <p><b class="cart-total-payment">0</b></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="promotion" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Promotional Code</div>
+                </div>
+
+                <div data-page="guest-details" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Guest Details</div>
+                </div>
+
+                <div data-page="settings" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link" id="settings-back"> <i
+                                class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Settings</div>
+                    <div class="right sliding">
+                        <a href="#" class="link" id="settings-about"> <span>About</span>
+                        </a>
+                    </div>
+
+                    <div class="subnavbar">
+                        <div class="buttons-row">
+                            <a href="#tab-config-general" class="button tab-link active">General</a>
+                            <a id="a-setting-deviceITOS" href="#tab-config-device" class="button tab-link">Device</a>
+                            <a href="#tab-config-company-info" class="button tab-link">Company Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="synchronize" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Synchronize</div>
+                    <!--
+                <div class="right sliding">
+                    <a href="#" class="link" id="settings-save"> <span>Sync All</span><i class="icon icon-forward"></i>
+                    </a>
+                </div>
+				-->
+                    <div class="subnavbar">
+                        <div class="buttons-row">
+                            <a href="#tab-sync-transaction" id="view-sync-transaction"
+                                class="button tab-link active">Transaction</a>
+                            <!--<a href="#tab-sync-daily" id="view-sync-daily"class="button tab-link">Daily</a>-->
+                            <a href="#tab-sync-master" id="view-sync-master" class="button tab-link">Master</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="bookings" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Manage Booking</div>
+                    <div class="right sliding">
+                        <a href="#" class="link" id="bookings-search"> <span>Search</span>
+                        </a>
+                    </div>
+
+                    <div class="subnavbar">
+                        <div class="buttons-row" id="bookings-tab-group">
+                            <a href="#tab-booking-local" id="view-booking-local" class="button tab-link active">In
+                                Device</a>
+                            <a href="#tab-booking-server" id="view-booking-server" class="button tab-link">On Server</a>
+                            <!--
+						<a href="#tab-booking-payment" id="view-booking-payment" class="button tab-link">Payment</a>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="exchangerates-compare" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Exchange Rates</div>
+                </div>
+
+                <div data-page="manual-voucher" class="navbar-inner cached">
+                    <div class="left sliding">
+                        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+                        </a>
+                    </div>
+                    <div class="center sliding">Manual Voucher</div>
+                </div>
+            </div>
+
+            <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Index Page-->
+                <div data-page="index" class="page with-subnavbar">
+                    <!-- Scrollable page content-->
+                    <div class="page-content">
+
+                        <div class="content-block" style="margin:0; padding:0;">
+                            <div class="list-block" style="margin-top:26px;">
+                                <ul>
+                                    <li>
+                                        <a href="#" id="autocomplete-standalone-location"
+                                            class="item-link item-content autocomplete-opener">
+                                            <input type="hidden">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Location</div>
+                                                    <input style="font-weight:bold;" type="text" placeholder="Optional"
+                                                        readonly>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="autocomplete-standalone-excursion"
+                                            class="item-link item-content autocomplete-opener">
+                                            <input type="hidden">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Excursion</div>
+                                                    <input style="font-weight:bold;" type="text" placeholder="Search"
+                                                        readonly>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li id="input-agent">
+                                        <a href="#" id="autocomplete-standalone-agent"
+                                            class="item-link item-content autocomplete-opener">
+                                            <input type="hidden">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" id="input-agent-label"
+                                                        style="font-size:11px">Tour Operator / Agent</div>
+                                                    <input style="font-weight:bold;" type="text" placeholder="Search"
+                                                        readonly>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" id="autocomplete-standalone-hotel"
+                                            class="item-link item-content autocomplete-opener">
+                                            <input type="hidden">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Pickup Location</div>
+                                                    <input style="font-weight:bold;" type="text" placeholder="Search"
+                                                        readonly>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Pickup Time</div>
+                                                    <!--
+                                            <input style="text-align:center; font-weight:bold; width:25px; display:inline-block;" type="number" maxlength="2" placeholder="00" id="t-hour">
+                                            <b style="text-align:center; width:5px; display:inline-block;">:</b>
+                                            <input style="text-align:center; font-weight:bold; width:25px; display:inline-block;" type="number" maxlength="2" placeholder="00" id="t-minute">
+                                            -->
+                                                    <input style="font-weight:bold;" type="text" id="i-pickuptime"
+                                                        placeholder="Time" />
+                                                </div>
+                                                <!--
+                                        <a href="#" class="button" id="get-pickuptime" style="width:80px;">Get</a>
+                                          -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Room</div>
+                                                    <input style="font-weight:bold;" type="text" id="i-room"
+                                                        placeholder="Number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Tour Date</div>
+                                                    <input style="font-weight:bold;" type="text" placeholder="Select"
+                                                        readonly id="i-allotment-calendar">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <div class="item-title" style="font-size:11px">Pax</div>
+
+                                                    <div id="div-booking-pax" style="margin-bottom:10px;">
+
+                                                        <div class="pax input-stepper adult" style="position:relative;">
+
+                                                            <input type="text" value="2" min="0" max="0" min-age="12"
+                                                                max-age="99" readonly id="i-booking-pax-adult">
+                                                            <label>adult(s)</label>
+                                                            <div class="stepper-control row">
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-increase>+</a>
+                                                                </div>
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-decrease>-</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="pax input-stepper child" style="position:relative;">
+                                                            <input type="text" value="0" min="0" max="0" min-age="2"
+                                                                max-age="12" readonly id="i-booking-pax-child">
+                                                            <label>child(s)</label>
+                                                            <div class="stepper-control row">
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-increase>+</a>
+                                                                </div>
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-decrease>-</a>
+                                                                </div>
+                                                            </div>
+                                                            <div id="div-age-of-child"></div>
+                                                        </div>
+
+                                                        <div class="pax input-stepper infant"
+                                                            style="position:relative;">
+                                                            <input type="text" value="0" min="0" max="0" min-age="0"
+                                                                max-age="2" readonly id="i-booking-pax-infant">
+                                                            <label>infant(s)</label>
+                                                            <div class="stepper-control row">
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-increase>+</a>
+                                                                </div>
+                                                                <div class="col-50"><a href="#" class="button"
+                                                                        data-input-stepper-decrease>-</a>
+                                                                </div>
+                                                            </div>
+                                                            <div id="div-age-of-infant"></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <a href="#" class="button button-fill color-green"
+                                                        id="view-price-detail">Submit</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Detail Page-->
+                <div data-page="price-detail" class="page cached">
+                    <div class="page-content">
+                        <div class="content-block" style="text-align:center; margin:0;">
+                            <span id="detail-agent" style="font-size:10px; position:relative; top:20px;">AGENT</span>
+                            <h3 id="detail-product">PRODUCT NAME</h3>
+                            <span
+                                style="display:block; font-size:0.8em; margin-top:-15px; margin-bottom:15px; text-transform:uppercase;">
+                                <i id="detail-hotel">HOTEL AREA</i><br>
+                                <i id="detail-date">dd MMM yyyy</i>
+                            </span>
+
+                            <div id="detail-pax" style="margin-bottom:10px;">
+                                <table>
+                                    <thead cellspacing='0'>
+                                        <th>Charge Type</th>
+                                        <th width="70px" style="text-align:center;" id="detail-pupp">Rate</th>
+                                        <th width="80px" style="text-align:right;">Price</th>
+                                    </thead>
+                                    <tbody id="detail-price-pax">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="detail-surcharge" style="margin-bottom:10px;">
+                                <table>
+                                    <thead cellspacing='0'>
+                                        <th>Surcharge</th>
+                                        <th width="70px" style="text-align:center;">Mandatory</th>
+                                        <th width="80px" style="text-align:right;">Price</th>
+                                    </thead>
+                                    <tbody id="detail-price-surcharge">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div style="margin-bottom:10px;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><b>FINAL PRICE</b></td>
+                                            <td width="100px" style="text-align:right;"><b id="detail-total-price">0</b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--
+						<div id="detail-remark" style="padding:15px 5px 25px 5px;">
+                            <a id="show-remark" href="#">Do you have a remark?</a>
+                        </div>-->
+
+                            <div id="detail-remark-fields" style="margin-bottom:10px; display:none;">
+                                <table>
+                                    <!--
+                                <thead cellspacing='0'>
+                                    <th width="50px">Receiver</th>
+                                    <th>Remark</th>
+                                </thead>-->
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:top; width:60px;">Remark for
+                                                <b>Internal</b>
+                                            </td>
+                                            <td>
+                                                <textarea id="detail-remark1" cols="50" rows="4"
+                                                    style="display:block; width:100%; height:100px;"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center; vertical-align:top; width:60px;">Remark for
+                                                <b>guest</b>
+                                            </td>
+                                            <td>
+                                                <textarea id="detail-remark2" cols="50" rows="4"
+                                                    style="display:block; width:100%; height:100px;"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div id="detail-button" style="text-align:left;">
+                                <p style="font-size:10px;">
+                                    Make sure the data is correct, then tap <i>add to cart</i>!<br>
+                                    Discount or promotion can be applied later in cart item(s) list.<br>
+                                    If required, you can <a id="show-remark" href="#"
+                                        style="color:red; font-size:12px; font-weight:bold;">add a remark</a>.</p>
+                                <hr>
+                                <a href="#" class="button button-fill color-green" id="add_to_cart">Add to cart</a>
+                                <br />
+                                <br />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="cart" class="page with-subnavbar cached">
+                    <div class="page-content">
+                        <div class="content-block" style="margin:20px 0;">
+                            <div class="content-block-title" id="lbl-len-info-cart">0 transaction(s)</div>
+                            <div class="list-block">
+                                <ul id="cart-items" style="background:transparent;">
+
+                                </ul>
+                                <div>
+                                    <p style="font-size:10px;">Review your cart item(s) before committing payment.</p>
+                                    <hr>
+                                    <div class="row">
+                                        <a href="#" class="col button button-fill color-orange"
+                                            id="promotion-nav">Voucher</a><br>
+                                        <a href="#" class="col button button-fill color-green checkout-nav"
+                                            id="checkout-nav"><b>Checkout</b></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="exchangerates" class="page cached">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <div class="content-block-title">Exchange Rates Information (<i
+                                    class="booking-mode">MODE</i>)</div>
+                            <span class="rates-date" style="font-size:10px; float:right;">-</span>
+                            <table class="auto">
+                                <thead cellspacing='0'>
+                                    <tr>
+                                        <th>Exchange Rates</th>
+                                        <th>Cash Payment</th>
+                                        <th>Credit Card (<i id="credit-card-value-add"></i>)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="exchangerates-list">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="payment" class="page with-subnavbar cached">
+                    <div class="page-content">
+                        <div class="content-block" style="margin:20px 0; padding:0;">
+                            <div class="content-block-title">Personal Info</div>
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Title</div>
+                                                <div class="item-input">
+                                                    <select id="checkout-title">
+                                                        <option value="MR/MRS">Mr./Mrs.</option>
+                                                        <option value="MR">Mr.</option>
+                                                        <option value="MR/MR">Mr./Mr.</option>
+                                                        <option value="MRS">Mrs.</option>
+                                                        <option value="MRS/MRS">Mrs./Mrs.</option>
+                                                        <option value="PTY">Pty.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Full Name</div>
+                                                <div class="item-input">
+                                                    <input type="text" id="checkout-firstname" placeholder="First name"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label"></div>
+                                                <div class="item-input">
+                                                    <input type="text" id="checkout-lastname" placeholder="Last name"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">E-mail</div>
+                                                <div class="item-input">
+                                                    <input type="email" id="checkout-email" placeholder="Optional"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Mobile</div>
+                                                <div class="item-input">
+                                                    <input type="tel" id="checkout-phone" placeholder="Optional"
+                                                        value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <!--<div class="item-title label"></div>-->
+                                                <div class="item-input">
+                                                    <a id="checkout-guest-list" href="#" class="button"><b>Input guest
+                                                            list</b></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="content-block-title">Method</div>
+
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">Payment</div>
+                                                <div class="item-input">
+                                                    <select id="checkout-paymethod">
+                                                        <option value="cp" id="pm-combinable-payment">Combinable Payment
+                                                        </option>
+                                                        <option value="ca">Pay with Cash</option>
+                                                        <option value="cc">Pay with Credit Card</option>
+                                                        <option value="pot">Pay on Tour</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="content-block-title">Amount</div>
+                            <div class="list-block">
+                                <ul id="pay-input">
+
+                                </ul>
+                            </div>
+
+                            <div style="margin-top:-35px; padding:10px;">
+                                <p style="font-size:10px;">By tapping <b>finish</b>, you are agree with all condition in
+                                    this transaction and including applied <a href="#exchangerates"
+                                        style="color:red; font-size:12px; font-weight:bold;">exchange rates</a>.</p>
+                                <hr>
+                                <a id="checkout-finish" href="#"
+                                    class="button button-fill color-green"><b>Finish</b></a>
+                                <a id="checkout-paygate" href="#" class="button hidden"><b>Go to PAYGATE</b></a>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="promotion" class="page cached">
+
+                    <!-- Search Bar -->
+                    <div class="searchbar">
+                        <div class="searchbar-input">
+                            <input type="search" id="promotion-search" placeholder="Search">
+                            <!--
+                        <a href="#" class="searchbar-clear"></a>-->
+                        </div>
+                        <!--
+                    <a href="#" class="searchbar-cancel">Cancel</a>-->
+                    </div>
+
+                    <!-- Search Bar overlay--
+                <div class="searchbar-overlay"></div>->
+                
+                <!-- Page content -->
+
+                    <div class="page-content" style="margin-top: 40px;">
+                        <!--
+                    <div class="content-block searchbar-not-found">
+                            Nothing found
+                    </div>-->
+                        <div class="content-block-title" id="promotion-info">Type a <b>code</b> or registered <b>guest
+                                name</b>!</div>
+                        <div class="list-block">
+
+                            <ul id="promotion-list">
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div data-page="guest-details" class="page cached">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <div id="guest-list">
+
+                            </div>
+                            <div style="margin-top:-35px;">
+                                <p style="font-size:10px;">Make sure the guest name matches their identity card.</p>
+                                <hr>
+                                <a href="#" class="button back"><b>Ok</b></a>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page-->
+
+                <div data-page="settings" class="page with-subnavbar cached">
+                    <div class="page-content">
+                        <div class="content-block">
+
+                            <div class="tabs">
+
+                                <div id="tab-config-general" class="tab active">
+                                    <div class="content-block-title">User Account</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Domain</div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-domain"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Branch</div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-branch"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">User</div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-user"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px;">User Initial
+                                                            </div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-user-initial"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Market</div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-market"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Currency of
+                                                                Sales</div>
+                                                            <p style="font-size:15px; margin:10px 0;"
+                                                                id="settings-currency"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <a href="#" class="button button-fill color-red"
+                                                                id="settings-setup">Setup</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="content-block-title" style="color: red;">Transaction Policies</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">
+                                                                <span>Allow Custom Voucher Number</span>
+                                                                <!--
+                                                        <span style="float:right"><a onclick='view_information($INFORMATION.allow_voucher_amend);'>Info</a></span>-->
+                                                            </div>
+                                                            <select id="settings-voucher-connect">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">
+                                                                <span>Allow Voucher Amend</span>
+                                                                <!--
+                                                        <span style="float:right"><a onclick='view_information($INFORMATION.allow_voucher_amend);'>Info</a></span>-->
+                                                            </div>
+                                                            <select id="settings-voucher-amend">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">
+                                                                <span>Combinable Payment</span>
+                                                                <!--
+                                                        <span style="float:right"><a onclick='view_information($INFORMATION.combinable_payment);'>Info</a></span>-->
+                                                            </div>
+                                                            <select id="settings-payment-combinable">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Discount
+                                                                Before Surcharge</div>
+                                                            <select id="settings-discount-beforesurcharge">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Discount
+                                                                Validation</div>
+                                                            <select id="settings-discount-validation">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Last Minute
+                                                                Booking</div>
+                                                            <select id="settings-lastminute-booking">
+                                                                <option value="-1">TODAY</option>
+                                                                <option value="0" selected>TOMORROW</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Manual
+                                                                Payment</div>
+                                                            <select id="settings-payment-manual">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Manual
+                                                                Voucher</div>
+                                                            <select id="settings-voucher-manual">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Required
+                                                                Guest Details</div>
+                                                            <select id="settings-required-guestdetails">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Payment
+                                                                Default</div>
+                                                            <select id="settings-payment-default">
+                                                                <option value="cp">Combinable Payment</option>
+                                                                <option value="ca" selected>Pay with Cash</option>
+                                                                <option value="cc">Pay with Credit Card</option>
+                                                                <option value="pot">Pay on Tour</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!--
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <a href="#" class="button" id="settings-paygate">Payment Gate</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    -->
+                                        </ul>
+                                    </div>
+
+                                    <div class="content-block-title" style="color: red;">Interfaces</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Discount
+                                                                Split View</div>
+                                                            <select id="settings-discount-splitview">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <a href="#" id="autocomplete-standalone-language"
+                                                    class="item-link item-content autocomplete-opener">
+                                                    <input type="hidden">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Excursion
+                                                                Language</div>
+                                                            <input type="text" placeholder="Select" readonly>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Show Footer
+                                                                Branch Company</div>
+                                                            <select id="settings-footer-branch-company">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="content-block-title" style="color: red;">Integrasi with Loroparque</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Connection
+                                                                api with Loroparque</div>
+                                                            <select id="settings-lp-status">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Status</div>
+                                                            <select id="settings-lp-status-dev">
+                                                                <option value="loroparque_pre" selected>TEST</option>
+                                                                <option value="loroparque_live">LIVE</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Barcode Setup -->
+                                    <div class="content-block-title" style="color: red;">Barcode Setup </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Print Barcode
+                                                            </div>
+                                                            <select id="settings-print-barcode">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Code type for
+                                                                Barcode</div>
+                                                            <select id="settings-barcode-type">
+                                                                <option value="65">UPC-A</option>
+                                                                <option value="66">UPC-E</option>
+                                                                <option value="67">EAN13 (JAN13)
+                                                                </option>
+                                                                <option value="68">EAN 8 (JAN8)
+                                                                </option>
+                                                                <option value="69">CODE 39</option>
+                                                                <option value="70">ITF</option>
+                                                                <option value="71">CODABAR (NW-7)
+                                                                </option>
+                                                                <option value="72" selected>CODE 93
+                                                                </option>
+                                                                <option value="73">CODE 128</option>
+                                                                <option value="74">PDF417</option>
+                                                                <option value="75">CODE 128 Auto
+                                                                </option>
+                                                                <option value="76">EAN 128</option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Barcode HRI
+                                                                Position Codes</div>
+                                                            <select id="settings-barcode-hri">
+                                                                <option value="0">NONE</option>
+                                                                <option value="1">ABOVE</option>
+                                                                <option value="2">BELOW</option>
+                                                                <option value="3">BOTH</option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">length
+                                                                Barcode</div>
+                                                            <input type="text" id="settings-length-barcode">
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- END Barcode Setup -->
+
+
+                                    <!-- QRCode Setup -->
+
+                                    <div class="content-block-title" style="color: red;">QRCode Setup </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Print QR Code
+                                                            </div>
+                                                            <select id="settings-tpv-qr">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Size</div>
+                                                            <input type="text" id="settings-tpv-qrsize" value="256">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Position
+                                                            </div>
+                                                            <select id="settings-tpv-qrposition">
+                                                                <option value="LEFT">LEFT</option>
+                                                                <option value="CENTER" selected>
+                                                                    CENTER</option>
+                                                                <option value="RIGHT">RIGHT</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <!-- END QRCode Setup -->
+
+
+                                    <div class="content-block-title" style="color: red;">Printer Setup </div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Print Device
+                                                            </div>
+                                                            <select id="settings-print-device">
+                                                                <option value="BT" selected>
+                                                                    BLUETOOTH DEVICE</option>
+                                                                <option value="TPV">ITOS DEVICE
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Print
+                                                                Company's Logo on Voucher</div>
+                                                            <select id="settings-print-companylogo">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Print Size
+                                                            </div>
+                                                            <select id="settings-print-size">
+                                                                <option value="small">SMALL</option>
+                                                                <option value="normal" selected>
+                                                                    NORMAL</option>
+                                                            </select>
+                                                        </div>
+                                                        <a class="android-only"
+                                                            style="font-size:11px; width:100px; position:absolute; right:-25px; color:red;">Android
+                                                            Only</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Header Text
+                                                            </div>
+                                                            <input type="text" id="settings-print-header">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <a href="#" class="button button-fill color-orange"
+                                                                id="settings-printtest">Test
+                                                                Print</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+
+
+
+
+
+                                    <div class="block">
+                                        <hr />
+                                        <a href="#" class="button button-fill color-green" id="settings-save">Save
+                                            Setting</a>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- SETTING ITOS-->
+                                <div id="tab-config-device" class="tab ">
+                                    <div class="content-block-title">Device setup ITOS</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Device
+                                                                Payment</div>
+                                                            <select id="settings-tpv-device">
+                                                                <option value="true">YES</option>
+                                                                <option value="false" selected>NO</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">Address (keep
+                                                                blank for internal)</div>
+                                                            <input type="text" id="settings-tpv-address">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">X-SOURCE
+                                                            </div>
+                                                            <input type="text" id="settings-tpv-xsource">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">USERNAME
+                                                            </div>
+                                                            <input type="text" id="settings-tpv-username">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-input">
+                                                            <div class="item-title" style="font-size:11px">PASSWORD
+                                                            </div>
+                                                            <input type="password" id="settings-tpv-password">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!--<div class="content-block-title">QR Code Properties</div>
+                            <div class="list-block">
+                                <ul>                                    
+                                    
+                                                                       
+                                </ul>
+                            </div>-->
+
+                                    <div class="block">
+                                        <hr />
+                                        <a href="#" class="button button-fill color-green" id="settings-device">Save
+                                            Setting</a>
+                                    </div>
+                                </div>
+                                <!-- END SETTING ITOS-->
+
+
+
+                                <div id="tab-config-company-info" class="tab">
+
+                                    <div class="content-block-title">Company Information</div>
+                                    <div class="list-block">
+                                        <ul>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">REGISTRATION
+                                                                ID</div>
+                                                            <p style="font-size:15px;" id="settings-company-id"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">REGISTRATION
+                                                                DATE</div>
+                                                            <p style="font-size:15px;" id="settings-company-date"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">COMPANY</div>
+                                                            <p style="font-size:15px;" id="settings-company-name"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">ALIAS</div>
+                                                            <p style="font-size:15px;" id="settings-company-initial">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">ADDRESS OF
+                                                                COMPANY</div>
+                                                            <p style="font-size:15px;" id="settings-company-address">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">PHONE OF
+                                                                COMPANY</div>
+                                                            <p style="font-size:15px;" id="settings-company-phone"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">ADDRESS OF
+                                                                BRANCH</div>
+                                                            <p style="font-size:15px;" id="settings-branch-address"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">PHONE OF
+                                                                BRANCH</div>
+                                                            <p style="font-size:15px;" id="settings-branch-phone"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">HOTLINE</div>
+                                                            <p style="font-size:15px;" id="settings-company-hotline">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">TAX FOR CREDIT
+                                                                CARD (%)</div>
+                                                            <p style="font-size:15px;" id="settings-creditcard-tax"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">CANCELLATION
+                                                                POLICY</div>
+                                                            <p style="font-size:15px;" id="settings-cxlpolicy"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content disabled">
+                                                    <div class="item-inner">
+
+                                                        <div class="item-input">
+                                                            <div class="item-title"
+                                                                style="font-size:12px; font-weight:bold;">OTHER
+                                                                INFORMATION</div>
+                                                            <p style="font-size:15px;" id="settings-other-info"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <p style="font-size:12px; color:red;">You can't change these
+                                                        information from apps!</p>
+
+                                                </div>
+                                            </div>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div> <!-- end of .tab -->
+                            </div> <!-- end of .tabs -->
+                        </div> <!-- end of .content-block -->
+                    </div> <!-- end of .page-content -->
+                </div> <!-- end of .page -->
+
+                <div data-page="synchronize" class="page with-subnavbar cached">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <div class="tabs">
+                                <div id="tab-sync-transaction" class="tab active">
+                                    <div class="content-block-title" id="sync-transaction-info">No transaction(s) need
+                                        to sync</div>
+                                    <div class="list-block" style="font-size:14px;">
+                                        <span style="font-size:10px; float:right;">Last sync: <b
+                                                id="sync-transaction-last-date">never</b></span>
+                                        <table class="auto rounded">
+                                            <tbody id="sync-transaction-list">
+                                                <tr>
+                                                    <td colspan="2" style="padding:10px;">NO DATA</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="font-size:10px;">Synchronize transaction will proceed your offline
+                                            transaction by sending the data to company/agent and supplier.</p>
+                                        <hr />
+                                        <a href="#" class="button" id="sync-transaction-all">Sync all</a>
+                                    </div>
+                                </div>
+                                <div id="tab-sync-master" class="tab">
+                                    <div class="content-block-title" id="sync-master-info">No item(s) need to sync</div>
+                                    <div class="list-block" style="font-size:14px;">
+                                        <span style="font-size:10px; float:right;">Last sync: <b
+                                                id="sync-master-last-date">never</b></span>
+                                        <table class="auto rounded">
+                                            <tbody id="sync-master-list">
+                                                <tr>
+                                                    <td colspan="2" style="padding:10px;">NO DATA</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="content-block-title">UNUSED ITEMS</div>
+                                    <div class="list-block" style="font-size:14px;">
+
+                                        <table class="auto rounded">
+                                            <tbody id="sync-master-unused">
+                                                <tr>
+                                                    <td colspan="2" style="padding:10px;">NO DATA</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <p style="font-size:10px;">Synchronize master will update your offline database
+                                            with the latest product and other important data.</p>
+                                        <hr />
+                                        <a href="#" class="button" id="sync-master-all">Sync all</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="bookings" class="page with-subnavbar cached">
+                    <div class="page-content">
+                        <div class="content-block" style="padding:0;">
+                            <div class="tabs">
+
+                                <div id="tab-booking-local" class="tab active">
+                                    <div class="content-block-title" style="text-align:center;">
+                                        <span style="font-size:10px;">TRANSACTION REPORT</span><br>
+                                        <span style="font-size:16px;"><b id="bookings-date-device"
+                                                class="bookings-date">-</b></span><br>
+                                        <span style="font-size:10px;" id="booking-list-device-count"></span><br>
+
+                                    </div>
+
+                                    <span style="font-size:10px; margin-bottom:10px;"
+                                        id="booking-list-device-sync-count"></span>
+                                    <!--
+                            <table class="auto" >
+                                <tbody id="booking-list-device">
+
+                                </tbody>
+                            </table>-->
+                                    <div id="booking-list-device" style="padding: 2em 10px;">
+
+                                    </div>
+                                </div>
+                                <div id="tab-booking-server" class="tab">
+
+                                    <div class="tabs" style="margin-top: -55px;">
+                                        <div id="tab-view-detail" class="tab active">
+                                            <div style="padding: 2em 10px;" id="booking-list-server-detail">
+
+                                            </div>
+                                        </div>
+                                        <div id="tab-view-daily" class="tab">
+                                            <div style="padding: 2em 10px;" id="booking-list-server-daily">
+                                                <!--
+                                        <table class="auto rounded" style="margin-bottom:10px;">
+                                            <tbody >
+
+                                            </tbody>
+                                        </table>-->
+                                            </div>
+                                        </div>
+                                        <div id="tab-view-payment" class="tab">
+                                            <div style="padding: 2em 10px;" id="booking-list-server-payment">
+                                                <!--
+                                        <table class="auto rounded" style="margin-bottom:10px;">
+                                            <tbody >
+
+                                            </tbody>
+                                        </table>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Toolbar-->
+                    <div class="toolbar tabbar tabbar-labels" id="bookings-toolbar-bottom">
+                        <div class="toolbar-inner">
+                            <!--
+                        <a href="#" class="button" id="booking-list-summary">View Summary</a>-->
+                            <a href="#tab-view-detail" class="tab-link active">
+                                <i class="f7-icons size-22">document_text_fill</i>
+                                <span class="tabbar-label">Detail View</span>
+                            </a>
+                            <a href="#tab-view-daily" class="tab-link">
+                                <i class="f7-icons size-22">calendar</i>
+                                <span class="tabbar-label">Daily View</span>
+                            </a>
+                            <a href="#tab-view-payment" class="tab-link">
+                                <i class="f7-icons size-22">graph_square</i>
+                                <span class="tabbar-label">Payment View</span>
+                            </a>
+                            <a href="#" class="tab-link" id="tab-view-print">
+                                <i class="f7-icons size-22">list_bullet</i>
+                                <span class="tabbar-label">More</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /End of Bottom Toolbar-->
+                </div>
+
+                <div data-page="exchangerates-compare" class="page cached">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p style="font-size:10px;">The table shown below is comparison between exchange rates data
+                                from this device and server (latest).</p>
+                            <a href="#" class="button" id="exchangerates-update">Synchronize</a>
+                            <br>
+
+                            <table class="auto rounded">
+                                <thead cellspacing='0'>
+                                    <tr>
+                                        <th>Exchange Rates</th>
+                                        <th>
+                                            <span>Device</span><br>
+                                            <span style="font-weight:normal" id="ratedate-device">-</span>
+                                        </th>
+                                        <th>
+                                            <span id="rate-server-title">Server</span><br>
+                                            <span style="font-weight:normal" id="ratedate-server">-</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="exchangerates-compare-list">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-page="manual-voucher" class="page cached">
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p style="font-size:10px;">You can use this form to create a printed voucher manually;<br>
+                            </p>
+                            <ul style="font-size:10px;">
+                                <li>- all vouchers created with this form will not be stored in the database </li>
+                                <li>- please inform your company and supplier manually</li>
+                                <li>- please keep a copy of the voucher for administration purpose</li>
+                                <li>- use this form for emergency only</li>
+                            </ul>
+                            <br>
+                            <ul class="list-block" style="margin:0;">
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">
+                                                    Voucher number</div>
+                                                <input type="text" placeholder="Optional" id="manual-vouchernumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Agent
+                                                </div>
+                                                <input type="text" placeholder="Tour agent" id="manual-agent">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">
+                                                    Excursion</div>
+                                                <input type="text" placeholder="Tour name" id="manual-excursion">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Tour
+                                                    date</div>
+                                                <input type="text" placeholder="When?" id="manual-tourdate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Guest
+                                                </div>
+                                                <input type="text" placeholder="Full name" id="manual-guestname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Pickup
+                                                    location</div>
+                                                <input type="text" placeholder="Area or hotel" id="manual-pickuparea">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Pickup
+                                                    time</div>
+                                                <input type="text" placeholder="What time?" id="manual-timepickup">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Pax
+                                                </div>
+
+                                                <div id="div-booking-pax-manual" style="margin-bottom:10px;">
+
+                                                    <div class="pax input-stepper adult" style="position:relative;">
+
+                                                        <input type="text" value="2" min="1" max="99" readonly
+                                                            id="manual-i-booking-pax-adult">
+                                                        <label>adult(s)</label>
+                                                        <div class="stepper-control row">
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-increase>+</a>
+                                                            </div>
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-decrease>-</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="pax input-stepper child" style="position:relative;">
+                                                        <input type="text" value="0" min="0" max="99" readonly
+                                                            id="manual-i-booking-pax-child">
+                                                        <label>child(s)</label>
+                                                        <div class="stepper-control row">
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-increase>+</a>
+                                                            </div>
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-decrease>-</a>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div id="div-age-of-child"></div>-->
+                                                    </div>
+
+                                                    <div class="pax input-stepper infant" style="position:relative;">
+                                                        <input type="text" value="0" min="0" max="99" readonly
+                                                            id="manual-i-booking-pax-infant">
+                                                        <label>infant(s)</label>
+                                                        <div class="stepper-control row">
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-increase>+</a>
+                                                            </div>
+                                                            <div class="col-50"><a href="#" class="button"
+                                                                    data-input-stepper-decrease>-</a>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div id="div-age-of-infant"></div>-->
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Total
+                                                    payment</div>
+                                                <input type="text" placeholder="Amount with currency"
+                                                    id="manual-totalpayment">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Method
+                                                </div>
+                                                <select id="manual-paymethod">
+                                                    <option>Pay with cash</option>
+                                                    <option>Pay with credit card</option>
+                                                    <option>Pay on tour</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content" style="padding:0;">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <div class="item-title" style="font-size:12px; font-weight:bold;">Remark
+                                                </div>
+                                                <input type="text" placeholder="Note" id="manual-remark">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <br>
+                            <a href="#" class="button " id="manual-voucher-print">Print</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="view view-settings" style="display:none;">
+            <div class="navbar"></div>
+            <div class="pages navbar-through toolbar-through"></div>
+        </div>
+        <!--xxxxxxxxxxxxxxxxxxxx
+            POP-UP REGION
+            HERE!
+    xxxxxxxxxxxxxxxxxxxxx-->
+
+        <div class="popup popup-log">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        Log Details
+                    </div>
+                    <div class="right">
+                        <a href="#" class="link close-popup">
+                            <span>Close</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="page navbar-through toolbar-through">
+                <div class="page-content">
+                    <!--<div id="log-details" style="padding:0;">-->
+                    <iframe id="iframe-log-details" src="about:blank" height="100%" width="100%" frameBorder="0"
+                        style="overflow:hidden; height:100vh; width:100%"></iframe>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-about">
+            <div class="content-block">
+                <div style="padding:0 10px;">
+                    <b>About</b>
+                    <hr>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>App version</td>
+                                <td>
+                                    <span id="about-info-app-version"></span> build
+                                    <span id="about-info-app-build"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OS</td>
+                                <td>
+                                    <span id="about-info-platform"></span>
+                                    <span id="about-info-version"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Manufacturer</td>
+                                <td id="about-info-manufacturer">-</td>
+                            </tr>
+                            <tr>
+                                <td>Model</td>
+                                <td id="about-info-model">-</td>
+                            </tr>
+                            <tr>
+                                <td>UUID</td>
+                                <td id="about-info-uuid">-</td>
+                            </tr>
+                            <tr>
+                                <td>Serial</td>
+                                <td id="about-info-serial">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b>Supported Printer</b></td>
+                            </tr>
+                            <tr>
+                                <td>For Android</td>
+                                <td>
+                                    <ul>
+                                        <li>EP5802AI</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>For iOS</td>
+                                <td>
+                                    <ul>
+                                        <li>EP5802AI</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:10px;">Copyright © Smart Touristic System (STS) PTE Ltd.</p>
+                </div>
+                <div style="padding:0 10px;">
+                    <div class="row">
+                        <a href="#" class="col button button-fill close-popup color-green"
+                            id="about-changelog"><b>Change
+                                log</b></a><br />
+                        <a href="#" class="col button button-fill close-popup color-red" id="about-close">Close</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="popup popup-bookings-search">
+            <div class="content-block">
+                <div style="padding:0 10px;">
+                    <b>Search Transaction</b>
+                    <hr>
+                    <p style="font-size:10px;">You can search specific transaction by using this form;<br></p>
+                    <ul style="font-size:10px;">
+                        <li>- fill keyword with guest name, booking code, or leave it empty</li>
+                        <li>- choose date period for maximum 31 day of ranges</li>
+                        <li>- choose transaction sort filter: booking date or tour date</li>
+                    </ul>
+
+                    <div class="list-block" style="margin: 0 0 35px 0;">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <div class="item-title" style="font-size:11px">Keyword</div>
+                                            <input type="text" placeholder="Optional" id="i-bookings-search-keyword">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" id="bookings-search-fdate"
+                                    class="item-link item-content autocomplete-opener">
+                                    <input type="hidden">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <div class="item-title" style="font-size:11px">From</div>
+                                            <input type="text" placeholder="Select date" readonly
+                                                id="i-bookings-search-fdate">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="bookings-search-tdate"
+                                    class="item-link item-content autocomplete-opener">
+                                    <input type="hidden">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <div class="item-title" style="font-size:11px">To</div>
+                                            <input type="text" placeholder="Select date" readonly
+                                                id="i-bookings-search-tdate">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="bookings-search-sort"
+                                    class="item-link item-content autocomplete-opener">
+                                    <input type="hidden">
+                                    <div class="item-inner">
+                                        <div class="item-input">
+                                            <div class="item-title" style="font-size:11px">Sort by</div>
+                                            <select id="i-bookings-search-sort">
+                                                <option value="B" selected>Booking date</option>
+                                                <option value="T">Tour date</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--
+            <div style="padding:0 5px;">
+                <b>Find transaction</b>
+                <hr>
+                <form id="bookings-search-form" data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                    <div class="searchbar-input">
+                        <input id="bookings-search-keyword" type="search" placeholder="Type a code, tour, or guest name">
+                    </div>
+                </form>
+
+                <div class="content-block" style="margin-top:-1px;">
+                    <input id="bookings-search-date" type="hidden">
+                    <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
+                        <div id="bookings-search-calendar"></div>
+                    </div>
+                </div>      
+            </div>
+            <div style="padding:0 5px;">
+                <a href="#" class="button close-popup" id="bookings-search-start" ><b>Search</b></a><br />
+                <a href="#" class="button close-popup" id="bookings-close">Close</a>
+            </div>
+            -->
+                </div>
+                <div style="padding:0 5px;">
+                    <div class="row">
+                        <a href="#" class="col button button-fill color-green close-popup"
+                            id="bookings-search-start"><b>Search</b></a><br />
+                        <a href="#" class="col button button-fill color-red close-popup" id="bookings-close">Close</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popup popup-printer">
+            <div class="content-block">
+                <div style="padding:0 5px;">
+                    <p>Print a voucher via selected printer:</p>
+                </div>
+                <div class="list-block">
+                    <ul id="printer-list">
+
+                    </ul>
+                </div>
+                <div style="padding:0 10px;">
+                    <p style="font-size:10px; color:red;">Or you can add more printer by pairing it first.</p>
+                    <hr>
+                    <div class="row">
+                        <a href="#" id="printer-print" class="button button-fill col"><b>Print</b></a><br />
+                        <a href="#" id="printer-close" class="button button-fill col color-red close-popup">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-promotion">
+            <div class="content-block">
+                <div style="padding:0 10px;">
+                    <p id="promotion-info-reapply">You need to re-apply the voucher code to fix the price.</p>
+                    <p><b id="promotion-select" style="color:red;"></b> can be applied only to valid product(s) below:
+                    </p>
+                </div>
+                <div class="list-block">
+                    <ul id="promotion-apply-to">
+
+                    </ul>
+                </div>
+                <div style="padding:0 10px;">
+                    <p style="font-size:10px;">To overwrite, just re-apply the promotion code!</p>
+                    <hr>
+                    <a href="#" class="button close-popup" id="promotion-submit"><b>Apply now</b></a><br />
+                    <a href="#" class="button close-popup" id="promotion-close">Close</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="popup popup-settings-language">
+            <!-- Search Bar -->
+            <form data-search-list=".list-block-search" data-search-in=".item-title"
+                class="searchbar searchbar-init language">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search language"><a href="#" class="searchbar-clear"></a>
+                </div><a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+
+            <!-- Search Bar overlay -->
+            <!--<div class="searchbar-overlay"></div>-->
+
+            <div class="page-content">
+                <!-- This block will be displayed if nothing found -->
+                <div class="content-block searchbar-not-found">
+                    <div class="content-block-inner">Nothing found</div>
+                </div>
+
+                <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                <div class="list-block list-block-search searchbar-found">
+                    <ul id="settings-list-language"></ul>
+                </div>
+
+                <div style="padding:0 10px;">
+                    <hr>
+                    <a href="#" class="button close-popup">Close</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-list-location">
+            <!-- Search Bar -->
+            <form data-search-list=".list-block-search" data-search-in=".item-title"
+                class="searchbar searchbar-init language">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search location"><a href="#" class="searchbar-clear"></a>
+                </div><a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+
+            <!-- Search Bar overlay -->
+            <!--<div class="searchbar-overlay"></div>-->
+
+            <div class="page-content">
+                <!-- This block will be displayed if nothing found -->
+                <div class="content-block searchbar-not-found">
+                    <div class="content-block-inner">Nothing found</div>
+                </div>
+
+                <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+                <div class="list-block list-block-search searchbar-found">
+                    <ul id="list-location"></ul>
+                </div>
+
+                <div style="padding:0 10px;">
+                    <hr>
+                    <a href="#" class="button" id="list-location-close">Close</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-calendar-picker">
+            <div class="content-block">
+                <div style="padding:0 5px;">
+                    <b>Select date</b>
+                    <hr>
+                    <div class="content-block" style="margin-top:-1px;">
+                        <input id="calendar-picker-output" type="hidden">
+                        <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
+                            <div id="calendar-picker"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup popup-voucher">
+
+            <div class="content-block">
+                <div id="voucher-wrap" style="padding:0 5px;">
+                    <div style="text-align:center;">
+                        <span style="font-size:24px; font-weight:bold;">VOUCHER</span><br>
+                        <span style="font-size:14px;" id="voucher-number"></span><br>
+                        <span style="font-size:10px; font-style:italic;" id="voucher-bookingdate"></span><br>
+                    </div>
+                    <hr>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><b>Excursion</b></td>
+                                <td id="voucher-excursion">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Tour date</b></td>
+                                <td id="voucher-tourdate">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Guest</b></td>
+                                <td id="voucher-guestname">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Phone</b></td>
+                                <td id="voucher-phone">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Pickup location</b></td>
+                                <td id="voucher-pickup-location">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Pickup time</b></td>
+                                <td id="voucher-pickup-time">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Pickup point</b></td>
+                                <td id="voucher-meeting-point">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b>Guest information</b></td>
+                            </tr>
+                            <tr>
+                                <td><i>Pax</i></td>
+                                <td id="voucher-pax">-</td>
+                            </tr>
+                            <tr>
+                                <td><i>Guest list</i></td>
+                                <td id="voucher-guestlist">-</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><b>Payment detail</b></td>
+                            </tr>
+                            <tr>
+                                <td><i>Excursion</i></td>
+                                <td id="voucher-paydetail-excursion">-</td>
+                            </tr>
+                            <tr>
+                                <td><i>Discount</i></td>
+                                <td id="voucher-paydetail-discount">-</td>
+                            </tr>
+                            <tr>
+                                <td><i>Surcharge</i></td>
+                                <td id="voucher-paydetail-surcharge">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Total payment</b></td>
+                                <td id="voucher-paytotal">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Method</b></td>
+                                <td id="voucher-paymethod">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Representative</b></td>
+                                <td id="voucher-rep">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Agent</b></td>
+                                <td id="voucher-agent">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Supplier</b></td>
+                                <td id="voucher-supplier">-</td>
+                            </tr>
+                            <tr>
+                                <td><b>Status</b></td>
+                                <td id="voucher-status">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr>
+                <div class="row">
+
+                    <a href="#" class="col button button-fill color-green print"
+                        id="voucher-print"><b>Print</b></a><br />
+
+                    <a href="#" class="col button button-fill " id="voucher-connect">Custom Number</a><br
+                        id="voucher-connect-br" />
+
+                    <!--<a href="#" class="button print" id="voucher-screenshot"><b>Screenshot</b></a><br />-->
+
+                    <a href="#" class="col button button-fill " id="voucher-remark">Remark</a><br />
+                    <a href="#" class="col button button-fill color-orange" id="voucher-edit">Edit Voucher</a><br
+                        id="voucher-edit-br" />
+                    <a href="#" class="col button button-fill unsync" id="voucher-unsync">Unsync</a><br
+                        id="voucher-unsync-br" />
+                    <a href="#" class="col button button-fill color-red  close-popup" id="voucher-close">Close</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-voucher-connect">
+        <div class="content-block" style="margin:60px 0;">
+            <div class="content-block-title">Add/Edit Custom Voucher Number</div>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <!--<div class="item-title">Custom Voucher</div>-->
+                                <div class="item-input">
+                                    <input type="text" id="voucher-custom-number" class="holo" placeholder="Number"
+                                        value="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="button" id="voucher-connect-apply">Apply</a><br>
+            <a href="#" class="button close-popup" id="voucher-connect-close">Cancel</a>
+        </div>
+    </div>
+
+    <div class="popup popup-voucher-remark">
+        <div class="content-block" style="margin:60px 0;">
+            <div class="content-block-title">
+                <b id="voucher-remark-title" style="font-size:16px;"></b>
+            </div>
+            <div class="list-block accordion-list">
+                <ul>
+                    <li class="accordion-item accordion-item-expanded">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" style="font-size:14px;">Remark for <b>Internal</b></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item-content">
+                            <div class="content-block">
+                                <textarea id="voucher-remark1" cols="50" rows="4"
+                                    style="display:block; width:100%; height:100px;"
+                                    placeholder="Write here ..."></textarea>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion-item accordion-item-expanded">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title" style="font-size:14px;">Remark for <b>Guest</b></div>
+                            </div>
+                        </div>
+                        <div class="accordion-item-content">
+                            <div class="content-block">
+                                <textarea id="voucher-remark2" cols="50" rows="4"
+                                    style="display:block; width:100%; height:100px;"
+                                    placeholder="Write here ..."></textarea>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion-item accordion-item-expanded"></li>
+                </ul>
+            </div>
+            <div class="row">
+                <a href="#" class="col button button-fill color-green" id="voucher-remark-save">Save</a>
+                <a href="#" class="col button button-fill color-red close-popup" id="voucher-remark-close">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-voucher-edit">
+        <div class="content-block">
+            <div class="content-block-title">Personal Info</div>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Title</div>
+                                <div class="item-input">
+                                    <select id="voucher-edit-title">
+                                        <option value="MR/MRS">Mr./Mrs.</option>
+                                        <option value="MR">Mr.</option>
+                                        <option value="MR/MR">Mr./Mr.</option>
+                                        <option value="MRS">Mrs.</option>
+                                        <option value="MRS/MRS">Mrs./Mrs.</option>
+                                        <option value="PTY">Pty.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Full Name</div>
+                                <div class="item-input">
+                                    <input type="text" id="voucher-edit-firstname" placeholder="First name" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label"></div>
+                                <div class="item-input">
+                                    <input type="text" id="voucher-edit-lastname" placeholder="Last name" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <div class="content-block-title">Excursion</div>
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Tour date</div>
+                                    <div class="item-input">
+                                        <input type="text" id="voucher-edit-tourdate" placeholder="When?" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <br>
+                <div class="content-block-title">Pickup Info</div>
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Location</div>
+                                    <div class="item-input">
+                                        <input type="hidden" id="voucher-edit-pickuplocation-id">
+                                        <input type="text" id="voucher-edit-pickuplocation" placeholder="Where?"
+                                            value="" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Time</div>
+                                    <div class="item-input">
+                                        <input type="text" id="voucher-edit-pickuptime" placeholder="What time?"
+                                            value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Room</div>
+                                    <div class="item-input">
+                                        <input type="text" id="voucher-edit-pickuproom" placeholder="Number" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="button" id="voucher-edit-save">Save Changes</a><br>
+            <a href="#" class="button close-popup" id="voucher-edit-close">Cancel</a>
+        </div>
+    </div>
+
+    <div class="popup popup-summary">
+        <div class="content-block">
+            <div style="padding:0 5px;">
+                <div style="text-align:center;">
+                    <span style="font-size:24px; font-weight:bold;">SUMMARY</span><br>
+                    <!--<span style="font-size:14px;" id="summary-name"></span><br>
+                    <span style="font-size:14px;" id="summary-date"></span><br>-->
+                </div>
+                <hr>
+                <table>
+                    <tbody id="summary-list">
+
+                    </tbody>
+                </table>
+            </div>
+            <div style="padding:0 5px;">
+                <hr>
+                <a href="#" class="button " id="summary-print">Print</a><br>
+                <a href="#" class="button close-popup" id="summary-close">Close</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- popup-printpax -->
+    <div class="popup popup-printpax" data-swipe-to-close="to-bottom" style="height: 50%;bottom: 0px; top:unset;">
+        <div class="view">
+            <div class="page">
+                <div class="navbar-bg-header color-theme-white">
+                    <div class="navbar navbar-large no-hairline navbar-transparent ">
+                        <div class="navbar-bg"></div>
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <span class="if-not-md"
+                                    style="transform: translate3d(0px, 0px, 0px); font-weight: bold; color: #007aff;">Select
+                                    Traveller</span>
+                            </div>
+                            <div class="right">
+                                <a class="link close-popup">
+                                    <i class="icon f7-icons">clear</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toolbar toolbar-bottom no-hairline">
+                    <div class="toolbar-inner">
+                        <!--<h3>
+                              <small style="font-size: 11px;display: block; color: #9c9c9c;">Total</small>
+                              <span id="sp_totalprice" style="font-size: 22px; color: orange;">IDR 200,000.00</span>
+                            </h3>
+                            <button class="button button-fill" style="width: 80px;" id="btn-payhotel">Pay Now</button>-->
+
+                        <a href="#" id="print-pax" class="button button-fill col" style="width: 40%;"><b>Print</b></a>
+                        <a href="#" class="button button-fill col color-red close-popup" style="width: 40%;">Close</a>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="list-block" style="margin:0;">
+                        <ul id="ul-list-traveller" style="margin-bottom: 89px;">
+                            <li class="item-pax">
+                                <!--<div class="item-media">
+                                          <input type="checkbox" >
+                                        </div>
+                                      <div class="item-inner">
+                                        <div class="item-title">@:item-name:</div>
+                                      </div>-->
+
+                                <label class="checkbox item-content">
+                                    <input type="checkbox" data-namepax="@:data:" name="chk-pax" class="item-chkdisc"
+                                        @:checked: @:disabled: />
+                                    <i class="icon icon-checkbox" style="margin: 0px;"></i>
+                                    <div class="item-inner">
+                                        <div class="item-header" style="font-size:12px; padding:5px;">@:item-name:</div>
+                                    </div>
+                                </label>
+
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- popup-printpax /-->
+
+
+    </div>
+</body>
+
+</html>

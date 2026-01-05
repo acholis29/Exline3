@@ -1,0 +1,4 @@
+#Fri Jun 30 08:02:54 ICT 2023
+base.0=D\:\\--- Project\\STS\\Mobile\\Exline3\\build\\intermediates\\transforms\\dexMerger\\der\\debug\\0
+renamed.0=classes.dex
+path.0=classes.dex

@@ -1,0 +1,219 @@
+-- Merging decision tree log ---
+provider#io.github.pwlin.cordova.plugins.fileopener2.FileProvider
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:25:9-30:20
+	android:grantUriPermissions
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:26:38-72
+	android:authorities
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:25:19-73
+	android:exported
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:27:13-84
+manifest
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+MERGED from [:CordovaLib] D:\--- Project\STS\Mobile\Exline3\CordovaLib\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:20:1-27:12
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:17:1-31:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:1-51:12
+	package
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:104-146
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:75-103
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:11-45
+	xmlns:android
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:147-205
+	android:versionCode
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:2:46-74
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+supports-screens
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:4:22-64
+application
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:5:5-34:19
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:25:5-29:19
+	android:supportsRtl
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:8:9-41
+	android:hardwareAccelerated
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:6:9-43
+	android:icon
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:7:9-36
+	android:networkSecurityConfig
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:11:9-69
+	android:usesCleartextTraffic
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:10:9-44
+activity#com.smarttouristicsystem.exline3.MainActivity
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:13:9-24:20
+	android:label
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:14:13-50
+	android:launchMode
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:15:13-43
+	android:windowSoftInputMode
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:19:13-55
+	android:exported
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:16:13-36
+	android:configChanges
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:13:19-96
+	android:theme
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:18:13-75
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:17:13-73
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:20:13-23:29
+	android:label
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:20:28-65
+action#android.intent.action.MAIN
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:22:27-74
+uses-sdk
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:35:5-47
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:35:5-47
+MERGED from [:CordovaLib] D:\--- Project\STS\Mobile\Exline3\CordovaLib\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] D:\--- Project\STS\Mobile\Exline3\CordovaLib\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:25:5-44
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:21:5-23:58
+INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:35:5-47
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:35:15-44
+	android:minSdkVersion
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:35:5-47
+		INJECTED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:36:5-68
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:36:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:37:5-74
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:37:22-71
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:38:5-73
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:38:22-70
+uses-permission#android.permission.BLUETOOTH_ADVERTISE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:39:5-78
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:39:22-75
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:40:5-76
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:40:22-73
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:41:5-81
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:41:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:42:5-79
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:42:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:43:5-81
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:43:22-78
+uses-feature#android.hardware.location.gps
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:45:5-66
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:45:19-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:46:5-79
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:46:22-76
+uses-permission#android.permission.VIBRATE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:47:5-66
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:47:22-63
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:48:5-75
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:48:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:49:5-80
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:49:22-77
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:50:5-84
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:50:22-81
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:29:13-114
+	android:resource
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:29:75-111
+	android:name
+		ADDED from D:\--- Project\STS\Mobile\Exline3\AndroidManifest.xml:29:24-74
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\cf8732d80d15ce174122bf9ab0eaebdc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8b5584597ae764b7ee07d8bde6d45d40\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\dc3d8ce807fd4c988283690deba4ecc8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\8fd9b2bf5ce8c3337970c79bb17ac2e8\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\3cc8ca8e95dfeef72f8044f75af6f1bc\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:25.4.0] C:\Users\ACER\.gradle\caches\transforms-2\files-2.1\7618d202d932e82a0aee955b1b614bbe\AndroidManifest.xml:27:13-51

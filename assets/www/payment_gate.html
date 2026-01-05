@@ -1,0 +1,33 @@
+<div class="page" data-page="payment-gate" id="payment-gate-page">
+    <div data-page="payment-gate" class="navbar-inner cached">
+        <div class="left sliding">
+            <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+            </a>
+        </div>
+        <div class="center sliding">Payment Gateway</div>
+        <div class="right"></div>
+    </div>
+
+    <div class="page-content">
+        <div class="content-block" style="display:none;">
+            <!-- http://paygate.local/mIPGDetail.aspx -->
+            <form id="paygate-parameters" action="" target="my-iframe" method="post">
+
+                <input type="input" name="VOUCHER">
+                <input type="input" name="NAME">
+                <input type="input" name="EMAIL">
+                <input type="input" name="MOBILEPHONE">
+                <input type="input" name="AMOUNT">
+
+                <input type="input" name="forurl">
+                <input type="input" name="stsapp">
+                <input type="input" name="statusapp">
+
+                <button class="button" id="payment-pay-load">Pay now</button>
+
+            </form>
+        </div>
+        <iframe name="my-iframe" src="about:blank"  height="100%" width="100%" frameBorder="0" onload="iframe_load(this.contentWindow.location);" onerror="iframe_error"></iframe>
+    </div>
+
+</div>

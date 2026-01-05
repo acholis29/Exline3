@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\--- Project\\STS\\Mobile\\Exline3\\build\\intermediates\\incremental\\mergeDer1DebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "D:\\--- Project\\STS\\Mobile\\Exline3\\res\\values-en\\appupdate_strings.xml",
+                    "from": {
+                        "startLines": "11,10,9,8,7,14,13,15,2,4,3,5,6",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "613,543,472,412,362,741,687,864,57,184,131,261,315",
+                        "endColumns": "70,68,69,58,48,121,52,51,72,75,51,52,45",
+                        "endOffsets": "679,607,537,466,406,858,735,911,125,255,178,309,356"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,126,195,265,324,373,495,548,600,673,749,801,854",
+                        "endColumns": "70,68,69,58,48,121,52,51,72,75,51,52,45",
+                        "endOffsets": "121,190,260,319,368,490,543,595,668,744,796,849,895"
+                    }
+                }
+            ]
+        }
+    ]
+}

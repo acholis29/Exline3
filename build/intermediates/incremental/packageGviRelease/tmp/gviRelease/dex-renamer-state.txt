@@ -1,0 +1,4 @@
+#Tue May 14 10:47:08 ICT 2024
+base.0=D\:\\--- Project\\STS\\Mobile\\Exline3\\build\\intermediates\\transforms\\dexMerger\\gvi\\release\\0
+path.0=classes.dex
+renamed.0=classes.dex
