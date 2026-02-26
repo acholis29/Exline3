@@ -17,32 +17,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_25_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_25_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_25_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_25_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_25_4_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_25_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_25_4_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/www/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/www/page/changelog.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/www/page/changelog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDer1Debug/tmp/der1Debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDer1Debug/tmp/der1Debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDer1Debug/tmp/der1Debug/zip-cache/LAO5ZOrjqOxMg9ffLDJURhu_wO0=" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDer1Debug/tmp/der1Debug/zip-cache/LAO5ZOrjqOxMg9ffLDJURhu_wO0=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/derRelease/mergeDerReleaseAssets/out/www/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/derRelease/mergeDerReleaseAssets/out/www/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/processed_res/der1Debug/processDer1DebugResources/out/resources-der1Debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/processed_res/der1Debug/processDer1DebugResources/out/resources-der1Debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/outputs/apk/der1/debug/Exline3-der1-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/apk/der1/debug/Exline3-der1-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gvs/release/Exline3-gvs-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/gvs/release/Exline3-gvs-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gvs/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/gvs/release/output.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@RR2M4004AMA]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -50,7 +44,7 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="D:\--- Project\STS\Mobile\Exline3\KEY -IMPORTANT-\DER Cert.jks" />
+    <option name="KEY_STORE_PATH" value="D:\--- Project\STS\Mobile\Exline3\KEY -IMPORTANT-\GVS Cert.jks" />
     <option name="KEY_ALIAS" value="sts" />
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
@@ -69,10 +63,13 @@
   <component name="PropertiesComponent">
     <property name="ApkExportedModule" value="Exline3" />
     <property name="ExportApk.ApkPath" value="D:\--- Project\STS\Mobile\Exline3" />
-    <property name="ExportApk.BuildVariants" value="derRelease" />
+    <property name="ExportApk.BuildVariants" value="gvsRelease" />
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/KEY -IMPORTANT-/DER Cert.jks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/KEY -IMPORTANT-/GVS Cert.jks" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="PsdUISettings">
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
@@ -156,6 +153,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="477" y="262" key="#PSD" timestamp="1767620114495">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="477" y="262" key="#PSD/0.0.1920.1032@0.0.1920.1032" timestamp="1767620114495" />
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1772010234665">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1772010234665" />
     <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1767586137423">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

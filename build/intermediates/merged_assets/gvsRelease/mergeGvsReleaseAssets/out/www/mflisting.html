@@ -1,0 +1,89 @@
+<div data-page="product" class="navbar-inner cached">
+    <div class="left sliding">
+        <a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span>
+        </a>
+    </div>
+    <div class="center sliding">Master File Listing</div>
+    <div class="right sliding">
+        <a href="#" class="link" id="mf-change-date"> <span>Change date</span></a>
+    </div>
+
+    <div class="subnavbar">
+        <div class="buttons-row" id="product-tab-group">
+            <a href="#tab-price-local" id="view-price-local" class="button tab-link active">In Device</a>
+            <a href="#tab-price-server" id="view-price-server" class="button tab-link">On Server</a>
+        </div>
+    </div>
+</div>
+
+<div data-page="mflisting" class="page with-subnavbar cached">
+    <div class="page-content">
+        <div class="content-block">
+            <div class="tabs">
+
+                <div id="tab-price-local" class="tab active">
+                    <div class="content-block-title" style="text-align:center;">
+                        <span style="font-size:10px;">VALID PRODUCT ON </span><br>
+                        <span style="font-size:16px;"><b class="product-date">-</b></span><br>
+                        <span style="font-size:10px;" id="price-list-device-count"></span><br>
+
+                    </div>
+
+                    <span style="font-size:10px; margin-bottom:10px;" id="price-list-device-sync-count"></span>
+                    <table class="auto rounded" style="margin-bottom:10px;">
+                        <tbody id="price-list-device-sync">
+
+                        </tbody>
+                    </table>
+
+                    <table class="auto rounded" >
+                        <tbody id="price-list-device">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="tab-price-server" class="tab">
+                    <div class="content-block-title" style="text-align:center;">
+                        <span style="font-size:10px;">VALID PRODUCT ON</span><br>
+                        <span style="font-size:16px;"><b class="product-date">-</b></span><br>
+                        <span style="font-size:10px;" id="price-list-server-count"></span><br>
+                    </div>
+
+                    <span style="font-size:10px; margin-bottom:10px;" id="price-list-server-sync-count"></span>
+                    <table class="auto rounded" style="margin-bottom:10px;">
+                        <tbody id="price-list-server-sync">
+
+                        </tbody>
+                    </table>
+
+                    <table class="auto rounded" >
+                        <tbody id="price-list-server">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup-product-search">
+        <div class="content-block">
+            <div style="padding:0 5px;">
+                <b>Change validity</b>
+                <hr>
+                <div class="content-block" style="margin-top:-1px;">
+                    <input id="product-search-date" type="hidden">
+                    <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
+                        <div id="product-search-calendar"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:0 5px;">
+                <a href="#" class="button close-popup" id="product-search-start" ><b>Search</b></a><br />
+                <a href="#" class="button close-popup" id="product-close">Close</a>
+            </div>
+        </div>
+    </div>
+</div>

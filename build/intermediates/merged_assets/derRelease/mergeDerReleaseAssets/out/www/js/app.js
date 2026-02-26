@@ -1026,9 +1026,11 @@ $(document).ready(function () {
   $("#app-mode").on("click", function (e) {
     e.preventDefault();
 
+    console.log("switch mode");
+    return false; // disable for now, only for GVS
     var $checkbox = $("#switch-mode");
     var is_online = true; // temp value
-
+    
     if (!$checkbox.is(":checked")) {
       is_online = true; // go online
     } else {

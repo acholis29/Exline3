@@ -1,0 +1,7 @@
+Logo are taken based on company's initial (alias),
+for example: "Smart Touristic System" alias is "STS".
+
+To add new logo:
+1) Check your company's initial in database setup.
+2) Put the new logo in this folder, use this format on file name: logo_[initial].jpg
+3) Make sure the image resolution is 300x128 pixels

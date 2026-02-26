@@ -1025,7 +1025,9 @@ $(document).ready(function () {
 
   $("#app-mode").on("click", function (e) {
     e.preventDefault();
-
+    alert("your account not permitted!");
+    return false; // disable only GVS
+    
     var $checkbox = $("#switch-mode");
     var is_online = true; // temp value
 
